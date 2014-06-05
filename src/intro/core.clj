@@ -1,3 +1,6 @@
+;Git repo containing this code!
+;https://github.com/ksmith97/ClojureIntro
+
 ;This is a valid clojure file. Semicolons = //
 (ns intro.core)
 
