@@ -1,10 +1,13 @@
 (ns intro.bnc
   (:use overtone.core))
 
-(boot-external-server)
+(connect-external-server "10.190.9.19" 57110)
+
+; (boot-internal-server)
+
 ;Boot n Cat
 
-(def boot (sample "boot.wav"))
+(def boot (sample "C:/music/boot.wav"))
 
 (def cat (sample "cat.wav"))
 
