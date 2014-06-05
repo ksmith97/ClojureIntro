@@ -162,7 +162,8 @@
 ;The first param is the result of the previous application of the function while the second value is the next value from the list.
 (reduce #(+ %1 %2) '(1 2 3 4 5))
 
-;It doesnt always aggregate things it can be used to select a single value from the list. Although it should only be used in cases where it does not want to exit once it finds a valid value.
+;It doesnt always aggregate things it can be used to select a single value from the list.
+;Although it should only be used in cases where it does not want to exit once it finds a valid value.
 ;The following returns the larget value from the list.
 (reduce #(if
            (< %1 %2)
@@ -193,20 +194,36 @@
 (max '(1 2 3 4));(1 2 3 4)
 (apply max '(1 2 3 4)); 4
 
+;Laziness!!
+
+;Sequences!!!
+
+;Useful links
+
+;THE build/project/Clojure installation tool. Very impress. Much power.
+;http://leiningen.org/
+
+;Wiki style documentation on all core functions. Primary documentation source outside actual source.
+;http://clojuredocs.org/
+
+;Editors - Currently the best editors with support for clojure are Emacs/Vim.
+;Vim plugins
+;https://github.com/guns/vim-clojure-static
+;https://github.com/tpope/vim-fireplace
+
+;Emacs
+;Learn vim here. Technically emacs has the best support, but then you are not using vim.
+
+;Windows friendly gui editor. Quite powerful and under active development. For most usages this is more than enough.
+;http://www.lighttable.com/
 
 
-(fn [board]
-  (let [x-win? (fn [s b]
-                 (some #(every? #{s} %) b))
-        transpose (fn [b] (apply mapv vector b))
-        tBoard (transpose board)
-        diagBoard [[((board 0) 0) ((board 1) 1) ((board 2) 2)] [((board 0) 2) ((board 1) 1) ((board 2) 0)]]
-       ]
-  (cond
-   (x-win? :x board) :x
-   (x-win? :o board) :o
-   (x-win? :x tBoard) :x
-   (x-win? :o tBoard) :o
-   (x-win? :x diagBoard) :x
-   (x-win? :o diagBoard) :o)))
+;The actual website! Not super useful.
+;http://clojure.org/
 
+;Lots of very intresting videos on Clojure and related topics.
+;https://www.youtube.com/user/ClojureTV
+
+;For further intrest highly recommend the following books.
+;Programming Clojure
+;The Joy of Clojure
